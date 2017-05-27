@@ -47,7 +47,7 @@ function spmlog(options) {
       }
 
       var rmatch = new RegExp('(' + pattern[0] + '(?!\\s*data-spm-click="[^\\"]+"))', 'g')
-      var rtag = new RegExp('(<\\w+[\\s\\S]*?' + pattern[0] + '[\\s\\S]*?)/>|(<\\w+[\\s\\S]*?' + pattern[0] + '[\\s\\S]*?)>', 'g')
+      var rtag = new RegExp('(<\\w+[^<>]*?' + pattern[0] + '[^<>]*?)/>|(<\\w+[^<>]*?' + pattern[0] + '[^<>]*?)>', 'g')
       var rvalue = new RegExp(pattern[1])
 
       html = html.replace(rtag, function (m, $1, $2, $3, $4) {
